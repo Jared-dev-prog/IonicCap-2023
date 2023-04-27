@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="color">Color {{color.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="color" class="ion-margin-vertical">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Nombre: {{color.name}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        ID: {{color.id}}, <br />
+        Nombre: {{color.name}}, <br />
+        Year: {{color.year}}, <br />
+        Color: {{color.color}}, <br />
+        Pantone: {{color.pantone_value}}
+
+        <div
+          class="color-example"
+          [ngStyle]="{'background': color.color}"
+        ></div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
